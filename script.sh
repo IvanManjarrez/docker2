@@ -14,10 +14,10 @@ fi
 extension="${archivo##*.}"
 case "$extension" in
     py)   lenguaje="python"   ; imagen="python"  ; comando="python $archivo" ;;
-    java) lenguaje="java"      ; imagen="java"    ; comando="javac $archivo && java -cp /codigo ${archivo%.*}" ;;
-    cpp)  lenguaje="cpp"      ; imagen="cpp"     ; comando="g++ $archivo -o /codigo/a.out && /codigo/a.out" ;;
-    cc)   lenguaje="cpp"      ; imagen="cpp"     ; comando="g++ $archivo -o /codigo/a.out && /codigo/a.out" ;;
-    js)   lenguaje="javascript"; imagen="js"     ; comando="node $archivo" ;;
+    java) lenguaje="java"      ; imagen="openjdk"    ; comando="javac $archivo" ;;
+    cpp)  lenguaje="cpp"      ; imagen="gcc"     ; comando="g++ $archivo -o /codigo/a.out && /codigo/a.out" ;;
+    cc)   lenguaje="cpp"      ; imagen="gcc"     ; comando="g++ $archivo -o /codigo/a.out && /codigo/a.out" ;;
+    js)   lenguaje="javascript"; imagen="node"     ; comando="node $archivo" ;;
     rb)   lenguaje="ruby"     ; imagen="ruby"    ; comando="ruby $archivo" ;;
     *)    echo "Error: Lenguaje no soportado."; exit 1 ;;
 esac
